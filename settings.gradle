@@ -1,0 +1,2 @@
+include ':app', ':webslider'
+rootProject.name='WEBSlider Demo'
