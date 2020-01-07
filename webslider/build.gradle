@@ -1,0 +1,61 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'com.jfrog.bintray'
+
+ext {
+
+    bintrayRepo = "WEBSlider"
+    bintrayName = "net.webilisim.webslider"
+    libraryName = "webslider"
+
+    publishedGroupId = "net.webilisim.webslider"
+    artifact = "webslider"
+    libraryVersion = "1.0.3"
+
+    libraryDescription = "Advanced and easy android image slider implement custom adapter and animations."
+    siteUrl = "https://github.com/webilisim/WEBSlider"
+    gitUrl = "https://github.com/webilisim/WEBSlider.git"
+    developerId = "webilisim"
+    developerName = "We Bilişim"
+    developerEmail = "info@webilisim.net"
+
+    licenseName = "MIT"
+    licenseUrl = "https://opensource.org/licenses/MIT"
+    allLicenses = ["MIT"]
+
+}
+
+android {
+    compileSdkVersion 29
+    defaultConfig {
+        minSdkVersion 16
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0.3"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+    }
+
+    compileOptions {
+        sourceCompatibility 1.8
+        targetCompatibility 1.8
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+    buildToolsVersion = '29.0.2'
+
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.2.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+}
+apply from: 'bintrayv1.gradle'
+apply from: 'installv1.gradle'
